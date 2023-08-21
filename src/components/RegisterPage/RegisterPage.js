@@ -55,6 +55,7 @@ function RegisterPage() {
             axios.post('/api/users/register', body)
                 .then((response => {
                     if (!response.data.success) {
+                        console.log(response)
                         alert("이미 존재하는 email 입니다.")
                     }
                     else (navigate('/login'))
