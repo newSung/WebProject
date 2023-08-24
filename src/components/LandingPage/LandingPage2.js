@@ -5,7 +5,7 @@ import axios from 'axios'
 import { useEffect } from "react";
 import { Container, Table, Button } from "react-bootstrap";
 import Header2 from '../Header/Header2';
-import axiosInstance from './axios-config';
+import axiosInstance from '../axios-config';
 function LandingPage2() {
 
     const navigate = useNavigate();

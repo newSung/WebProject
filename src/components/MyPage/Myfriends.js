@@ -7,7 +7,7 @@ import { Container, Table, Button } from "react-bootstrap";
 import Header2 from '../Header/Header2';
 import Modal2 from '../Modal/Modal'
 import "../../css/Modal2.css"
-import axiosInstance from './axios-config';
+import axiosInstance from '../axios-config';
 
 function Myfriends() {
     const [flist, setFlist] = useState([])

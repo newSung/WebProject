@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Header from '../Header/Header';
-import axiosInstance from './axios-config';
+import axiosInstance from '../axios-config';
 
 function RegisterPage() {
 

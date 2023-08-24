@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import { useEffect } from "react";
-import axiosInstance from './axios-config';
+import axiosInstance from '../axios-config';
 // import "../../css/MainPage.css"
 function MyAccount() {
 

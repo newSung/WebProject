@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Header2 from '../Header/Header2';
-import axiosInstance from './axios-config';
+import axiosInstance from '../axios-config';
 
 function ShowDiaryPage() {
 

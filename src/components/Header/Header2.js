@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
-import axiosInstance from './axios-config';
+import axiosInstance from '../axios-config';
 
 function Header2() {
 

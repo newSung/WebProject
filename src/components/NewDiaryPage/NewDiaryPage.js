@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Header2 from '../Header/Header2';
 import { useEffect } from "react";
-import axiosInstance from './axios-config';
+import axiosInstance from '../axios-config';
 
 function NewDiaryPage() {
 
