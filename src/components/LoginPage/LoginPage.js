@@ -26,13 +26,12 @@ function LoginPage() {
             email: Email,
             password: Password
         }
-
-        axios.post('https://port-0-servertest2-619z9h2lllkpq5cz.sel3.cloudtype.app/api/users/login', body)
+        axios.post('api/users/login', body)
             .then((response => {
                 if (!response.data.loginSuccess) {
                     alert(response.data.message)
                 }
-                else (navigate('/after'))
+                else { (navigate('/after')) }
             }))
     }
 
