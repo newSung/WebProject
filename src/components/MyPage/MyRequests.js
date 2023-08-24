@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import axios from 'axios'
 import { useEffect } from "react";
-
+import axiosInstance from './axios-config';
 import "../../css/Modal2.css"
 function MyRequests() {
     const [flist, setFlist] = useState([])
@@ -12,7 +12,7 @@ function MyRequests() {
 
     useEffect(() => {
         setIsloading(true)
-        axios.get(`/api/friendrequest/read`)
+        axiosInstance.get(`/api/friendrequest/read`)
             .then(response => {
                 setFlen(response.data.length)
                 console.log(flen)
@@ -25,7 +25,7 @@ function MyRequests() {
 
     const onAcceptHandler = (event, id) => {
 
-        axios.post(`/api/friendrequest/addfriend/${id}`)
+        axiosInstance.post(`/api/friendrequest/addfriend/${id}`)
             .then(response => {
                 console.log(response)
                 setClicked(!clicked)
@@ -35,7 +35,7 @@ function MyRequests() {
     const onRefuseHandler = (event, id) => {
         console.log(id)
 
-        axios.delete(`/api/friendrequest/delete/${id}`)
+        axiosInstance.delete(`/api/friendrequest/delete/${id}`)
             .then((response => {
                 console.log(response)
                 setClicked(!clicked)

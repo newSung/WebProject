@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
-
+import axiosInstance from './axios-config';
 
 function Header2() {
 
@@ -14,7 +14,7 @@ function Header2() {
 
     const onLogoutHandler = (event) => {
 
-        axios.get('/api/users/logout')
+        axiosInstance.get('/api/users/logout')
             .then((response => {
                 navigate('/')
             }))
@@ -32,7 +32,7 @@ function Header2() {
         }
         else {
 
-            axios.get(`/api/users/search/${fname}`)
+            axiosInstance.get(`/api/users/search/${fname}`)
                 .then((response => {
                     console.log(response.data)
                     if (response.data === 'User not found') {
@@ -48,7 +48,7 @@ function Header2() {
 
     const addFriendHandler = () => {
         let user = ""
-        axios.get('/api/users/auth')
+        axiosInstance.get('/api/users/auth')
             .then(response => {
                 user = response.data.username
                 if (user === fname) {
@@ -61,7 +61,7 @@ function Header2() {
                         username: fname,
                         from: user
                     }
-                    axios.post('/api/friendrequest/add', body)
+                    axiosInstance.post('/api/friendrequest/add', body)
                         .then(response => {
                             if (response.data.success === false) {
                                 alert("이미 친구신청을 보냈습니다.")

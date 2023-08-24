@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Header2 from '../Header/Header2';
 import { useEffect } from "react";
+import axiosInstance from './axios-config';
 
 function NewDiaryPage() {
 
@@ -51,7 +52,7 @@ function NewDiaryPage() {
 
         var dateString = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds;
 
-        axios.get('/api/users/auth')
+        axiosInstance.get('/api/users/auth')
             .then(response => {
 
                 if (condition === true) {
@@ -61,7 +62,7 @@ function NewDiaryPage() {
                         date: dateString,
                         username: response.data.username
                     }
-                    axios.post('/api/diary/write', body)
+                    axiosInstance.post('/api/diary/write', body)
                         .then((response => {
                             navigate('/after')
                         }))
@@ -74,7 +75,7 @@ function NewDiaryPage() {
                         username: response.data.username,
                         _id: id
                     }
-                    axios.put('/api/diary/update', body)
+                    axiosInstance.put('/api/diary/update', body)
                         .then((response => {
                             navigate('/after')
                         }))

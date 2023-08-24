@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Header2 from '../Header/Header2';
+import axiosInstance from './axios-config';
 
 function ShowDiaryPage() {
 
@@ -17,7 +18,7 @@ function ShowDiaryPage() {
     let sbt = null;
 
     useEffect(() => {
-        axios.get('/api/users/auth').then(
+        axiosInstance.get('/api/users/auth').then(
             response => {
                 setUser(response.data.username)
             }
@@ -36,7 +37,7 @@ function ShowDiaryPage() {
         let body = {
             _id: id
         }
-        axios.delete('/api/diary/delete', { data: body })
+        axiosInstance.delete('/api/diary/delete', { data: body })
             .then((response => {
                 console.log(response)
                 navigate('/after')

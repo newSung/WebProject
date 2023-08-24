@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import { useEffect } from "react";
+import axiosInstance from './axios-config';
 // import "../../css/MainPage.css"
 function MyAccount() {
 
@@ -21,7 +22,7 @@ function MyAccount() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get('/api/users/auth')
+        axiosInstance.get('/api/users/auth')
             .then(response => {
                 setUserName(response.data.username)
                 setRegisterDate(response.data.registerDate)
@@ -62,7 +63,7 @@ function MyAccount() {
         }
 
 
-        axios.delete('/api/users/delete', { data: body })
+        axiosInstance.delete('/api/users/delete', { data: body })
             .then(response => {
                 if (response.data.loginSuccess === false)
                     alert(response.data.message)
@@ -89,7 +90,7 @@ function MyAccount() {
             }
 
 
-            axios.put('/api/users/change', body)
+            axiosInstance.put('/api/users/change', body)
                 .then(response => {
                     if (response.data.loginSuccess === false)
                         alert(response.data.message)

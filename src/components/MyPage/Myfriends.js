@@ -7,6 +7,8 @@ import { Container, Table, Button } from "react-bootstrap";
 import Header2 from '../Header/Header2';
 import Modal2 from '../Modal/Modal'
 import "../../css/Modal2.css"
+import axiosInstance from './axios-config';
+
 function Myfriends() {
     const [flist, setFlist] = useState([])
     const [clicked, setClicked] = useState(false)
@@ -15,7 +17,7 @@ function Myfriends() {
 
     useEffect(() => {
         setIsloading(true)
-        axios.get('/api/users/auth')
+        axiosInstance.get('/api/users/auth')
             .then(response => {
                 setFlen(response.data.friends.length)
                 setFlist(response.data.friends)
@@ -25,7 +27,7 @@ function Myfriends() {
 
     const onDeleteHandler = (event, id) => {
 
-        axios.delete(`/api/users/frienddelete/${id}`)
+        axiosInstance.delete(`/api/users/frienddelete/${id}`)
             .then((response => {
                 console.log(response)
                 setClicked(!clicked)

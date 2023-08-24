@@ -10,6 +10,7 @@ import MyAccount from "../MyPage/MyAccount"
 import Myfriends from "./Myfriends"
 import MyRequests from './MyRequests';
 
+
 function MyPage() {
 
     const [selected, setSelected] = useState(0)

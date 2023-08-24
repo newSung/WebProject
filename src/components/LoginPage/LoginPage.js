@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
+import axiosInstance from './axios-config';
 function LoginPage() {
 
     const [Email, setEmail] = useState("")
@@ -26,7 +26,7 @@ function LoginPage() {
             email: Email,
             password: Password
         }
-        axios.post('api/users/login', body)
+        axiosInstance.post('api/users/login', body)
             .then((response => {
                 if (!response.data.loginSuccess) {
                     alert(response.data.message)
