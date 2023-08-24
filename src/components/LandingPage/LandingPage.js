@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { useNavigate } from 'react-router-dom';
 import Header from '../Header/Header';
 import { Container, Table, Button } from "react-bootstrap";
+import axiosInstance from './axios-config';
 function LandingPage() {
 
     const navigate = useNavigate();
