@@ -28,20 +28,54 @@ function LandingPage() {
     return (
         <div className="container-fluid" >
             <Header />
+            <div style={{ border: '1px solid black', marginRight: '30%', marginLeft: '30%', marginTop: '5%', padding: '10px' }}>
+                <form style={{ display: 'flex', flexDirection: 'column', }}>
+                    <div className="mb-3 row">
+                        <div className="image" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                            <img className="image" alt='myself' src="img/myself.jpg" style={{ wodth: '300px', height: '200px' }} />
+                        </div>
+                    </div>
+                    <div className="mb-3 row">
+                        <label className="col-sm-2 col-form-label">이름</label>
+                        <div className="col-sm-10">
+                            <input readOnly type="이름" className="form-control" id="이름" value='조성현' />
+                        </div>
+                    </div>
+                    <div className="mb-3 row" style={{ marginTop: '10px' }}>
+                        <label className="col-sm-2 col-form-label">생년월일</label>
+                        <div className="col-sm-10">
+                            <input readOnly type="생년월일" className="form-control" id="생년월일" value="1996년 6월 12일" />
+                        </div>
+                    </div>
+                    <div className="mb-3 row" style={{ marginTop: '10px' }}>
+                        <label className="col-sm-2 col-form-label">학력</label>
+                        <div className="col-sm-10">
+                            <input readOnly type="학력" className="form-control" id="학력" value="숭실대학교 컴퓨터 학부" />
+                        </div>
+                    </div>
+                    <div className="mb-3 row" style={{ marginTop: '10px' }}>
+                        <label className="col-sm-2 col-form-label">자기소개</label>
+                        <div className="col-sm-10">
+                            <textarea
+                                readOnly
+                                className="form-control"
+                                id="자기소개"
+                                value="저는 즉각적인 피드백이 있을 때 제 능력과 열정을 더 발휘할 수 있는 성격입니다. 시험을 보기 위해서 공부를 할 때에는 제가 한 달을 공부하든 두 달을 공부하든, 제 노력과 결과를 확인할 수 있는 방법은 시험 당일에 시험을 보는 것 뿐입니다. 하지만 프로그래밍을 할 때에는 컴파일러라는 유용한 도구가 있습니다. 이를 통해서 코딩을 하는 도중에 제가 작성하는 코드가 맞는지 틀렸는지, 틀렸으면 왜 틀렸는지 바로바로 확인 할 수가 있습니다. 이를 통해서 지속적으로 제가 생각하는 방향으로 프로그램 코드를 작성 할 수 있고, 만약 제 뜻대로 코딩이 되지 않아도 이를 해결하기 위해서 여러가지 방법을 지속적으로 시도해 볼 수 있습니다. 저는 이러한 과정이 매우 즐겁고 저에게 열정이 생기게 해주는 원동력이 됩니다."
+                                rows="12"
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <h5>"테스트 id : admin@gmail.com"</h5>
+                    </div>
+                    <div>
+                        <h5>"테스트 pw : 1234"</h5>
+                    </div>
+                </form>
+            </div>
+
             <div>
                 <Container style={{ paddingTop: 100 }}>
-
-                    <div style={{ textAlign: "right", marginBottom: 5 }}>
-                        <select onChange={onSelect}>
-                            <option value='10'> 10개 보기</option>
-                            <option value='15'> 15개 보기</option>
-                            <option value='20'> 20개 보기</option>
-                        </select>
-                        <select onChange={onSelectSort}>
-                            <option value='1'> 오름차순</option>
-                            <option value='0'> 내림차순</option>
-                        </select>
-                    </div>
                     <Table striped bordered hover size="sm" >
                         <thead>
                             <tr style={{ fontSize: 20 }}>
