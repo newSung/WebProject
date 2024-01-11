@@ -26,7 +26,9 @@ function LoginPage() {
             email: Email,
             password: Password
         }
-        axiosInstance.post('api/users/login', body)
+        axiosInstance.post('api/users/login', body, {
+            withCredentials: true,
+        })
             .then((response => {
                 if (!response.data.loginSuccess) {
                     alert(response.data.message)
