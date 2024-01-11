@@ -17,7 +17,9 @@ function LandingPage2() {
     const [sort, setSort] = useState('1');
     let dList
     useEffect(() => {
-        axiosInstance.get(`/api/diary/read`)
+        axiosInstance.get(`/api/diary/read`, {
+            withCredentials: true,
+        })
             .then(response => {
                 setTest(response.data)
                 setCnt(response.data.length)
