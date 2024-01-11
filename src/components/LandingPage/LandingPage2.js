@@ -22,6 +22,7 @@ function LandingPage2() {
                 setTest(response.data)
                 setCnt(response.data.length)
             })
+        console.log(Object.entries(test))
 
     }, [])
 
@@ -35,6 +36,7 @@ function LandingPage2() {
     const onClickHandler = (e) => {
         // console.log(Object.entries(test)[e.target.title])
         // console.log(Object.entries(test)[e.target.title][1].title)
+        console.log(Object.entries(test))
         navigate('/showdiary', { state: { ptitle: Object.entries(test)[e.target.title][1].title, pdiary: Object.entries(test)[e.target.title][1].diary, pwriter: Object.entries(test)[e.target.title][1].username, p_id: Object.entries(test)[e.target.title][1]._id } })
     }
 

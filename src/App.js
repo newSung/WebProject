@@ -11,13 +11,13 @@ import Auth from './hoc/auth'
 
 function App() {
 
-  // const AuthLandingPage = Auth(LandingPage, false);
-  // const AuthLoginPage = Auth(LoginPage, false);
-  // const AuthRegisterPage = Auth(RegisterPage, false);
-  // const AuthLandingPage2 = Auth(LandingPage2, true);
-  // const AuthNewDiaryPage = Auth(NewDiaryPage, true);
-  // const AuthShowDiaryPage = Auth(ShowDiaryPage, true);
-  // const AuthMyPage = Auth(MyPage, true);
+  const AuthLandingPage = Auth(LandingPage, false);
+  const AuthLoginPage = Auth(LoginPage, false);
+  const AuthRegisterPage = Auth(RegisterPage, false);
+  const AuthLandingPage2 = Auth(LandingPage2, true);
+  const AuthNewDiaryPage = Auth(NewDiaryPage, true);
+  const AuthShowDiaryPage = Auth(ShowDiaryPage, true);
+  const AuthMyPage = Auth(MyPage, true);
 
 
   return (

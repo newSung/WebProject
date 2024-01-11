@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
+import axiosInstance from '../components/axios-config';
 
 export default function aa(SpecificComponent, option, adminRoute = null) {
     //option
@@ -13,7 +14,7 @@ export default function aa(SpecificComponent, option, adminRoute = null) {
         const navigate = useNavigate();
 
         useEffect(() => {
-            axios.get('/api/users/auth')
+            axiosInstance.get('/api/users/auth')
                 .then(response => {
                     //로그인 x
                     if (!response.data.isAuth) {
